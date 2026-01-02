@@ -1,0 +1,49 @@
+# =========================
+# NODE / NPM
+# =========================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# =========================
+# ENV FILES
+# =========================
+.env
+.env.local
+.env.development
+.env.production
+
+# =========================
+# BUILD FOLDERS
+# =========================
+dist/
+build/
+
+# =========================
+# OS FILES
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# EDITOR FILES
+# =========================
+.vscode/
+.idea/
+
+# =========================
+# LOG FILES
+# =========================
+*.log
+
+# =========================
+# UPLOADS (optional)
+# =========================
+NODE-JS/practice/uploads/
+
+# =========================
+# TEMP FILES
+# =========================
+*.tmp
+*.temp
