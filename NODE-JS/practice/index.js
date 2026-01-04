@@ -1,24 +1,28 @@
-const fs = require("fs");
+const http = require("http");
+const fs = require("fs/promises");
+const path = require("path");
 
-// file khoja raha hu
-if (fs.existsSync("demo.txt", "utf-8")) {
-  console.log("file found !");
-} else {
-  console.log("not found !");
-}
-// data read kar rahaha hu
-try {
-  const data = fs.readFileSync("demo.txt", "utf-8");
-  console.log(data);
-} catch (eror) {
-  console.log("Eror : ", eror);
-}
+const server = http.createServer(async (req, res) => {
+  if (req.url === "/") {
+    try {
+      const filePath = path.join(__dirname, "index.txt");
 
-fs.mkdir("uploads", (err) => {
-  if (err) console.log("Already exists");
-  else console.log("Folder created");
+      await fs.writeFile(filePath, "Hello Man", "utf-8");
+      const data = await fs.readFile(filePath, "utf-8");
+
+      console.log("File Data:", data);
+
+      res.end("File written & read successfully ✅");
+    } catch (error) {
+      console.log("Error aaya:", error);
+      res.statusCode = 500;
+      res.end("Server Error ❌");
+    }
+  } else {
+    res.end("Not Found");
+  }
 });
-fs.readdir("./", (err, files) => {
-  if (err) return console.log(err);
-  console.log(files);
+
+server.listen(3000, () => {
+  console.log("Server running 👉 http://localhost:3000");
 });
