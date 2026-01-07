@@ -1,0 +1,112 @@
+@import "tailwindcss";
+/* =============================== */
+/* 🌐 GOOGLE FONT */
+/* =============================== */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+/* =============================== */
+/* 🎨 ROOT THEME VARIABLES */
+/* =============================== */
+:root {
+  --primary: #ff9f43;
+  --secondary: #7c3aed;
+  --danger: #ef4444;
+  --success: #22c55e;
+
+  --bg-main: #05060f;
+  --bg-soft: #0b1320;
+  --bg-card: rgba(255,255,255,0.06);
+
+  --text-main: #ffffff;
+  --text-soft: #c8b6ff;
+  --text-muted: #9ca3af;
+
+  --radius: 14px;
+  --transition: 0.3s ease;
+
+  --shadow-soft: 0 10px 30px rgba(0,0,0,0.5);
+  --glow-primary: 0 0 25px rgba(255,159,67,0.35);
+}
+
+/* =============================== */
+/* 🔄 RESET */
+/* =============================== */
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+} */
+
+/* =============================== */
+/* 🌌 BASE APP */
+/* =============================== */
+body {
+  font-family: "Poppins", sans-serif;
+  background: radial-gradient(circle at top, #25163c, #05060f 70%);
+  color: var(--text-main);
+}
+
+/* =============================== */
+/* 🪟 CARD COMPONENT */
+/* =============================== */
+.app-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow-soft);
+  transition: var(--transition);
+}
+
+.app-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--glow-primary), var(--shadow-soft);
+}
+
+/* =============================== */
+/* 🔤 TEXT SYSTEM */
+/* =============================== */
+.text-title { font-size: 1.8rem; font-weight: 700; }
+.text-soft { color: var(--text-soft); }
+.text-muted { color: var(--text-muted); }
+
+/* =============================== */
+/* ✏️ INPUT SYSTEM */
+/* =============================== */
+.app-input {
+  width: 100%;
+  padding: 10px 14px;
+  background: rgba(0,0,0,0.4);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 10px;
+  color: white;
+  outline: none;
+  transition: var(--transition);
+}
+
+.app-input:focus {
+  border-color: var(--primary);
+  box-shadow: var(--glow-primary);
+  background: rgba(0,0,0,0.6);
+}
+
+/* =============================== */
+/* 🔘 BUTTON SYSTEM */
+/* =============================== */
+.app-btn {
+  padding: 10px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  background: linear-gradient(135deg, var(--primary), #ff7a00);
+  color: #000;
+  transition: var(--transition);
+}
+
+.app-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--glow-primary);
+  opacity: 0.95;
+}
